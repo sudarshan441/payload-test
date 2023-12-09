@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>hello</h1>
+</body>
+</html>
+<script>
+    let formData = new FormData();
+formData.append("username", "Chris");
+formData.append("email", "sudarshanpujari6@gmail.com");
+formData.append("mobile", "7259902441");
+for (let pair of formData.entries()) {
+  console.log(pair[0] + ": " + pair[1]);
+}
+</script>
