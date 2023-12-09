@@ -43,7 +43,7 @@ const CustomImageComponent = ({ path }) => {
   
   return (
     <div>
-      <UploadInput name={path} path={path} relationTo="images" fieldTypes={fieldTypes}></UploadInput>
+      {/* <UploadInput name={path} path={path} relationTo="images" fieldTypes={fieldTypes}></UploadInput> */}
     </div>
   );
 };
