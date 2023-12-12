@@ -1,6 +1,5 @@
 import express from 'express'
 import payload from 'payload'
-
 require('dotenv').config()
 import multer from "multer";
 const upload = multer({ storage: multer.memoryStorage() });
@@ -14,11 +13,12 @@ app.get('/', (_, res) => {
 app.patch("/api/custom/route",upload.array('images'),async(req, res) => {
   try{
     const uploadedFiles = req.files as Express.Multer.File[];
+    const { alt } = req.body
     const imagePromises = uploadedFiles.map( async(image, index) => {
       const img = await payload.create({
         collection: "images",
         data: {
-         alt:image.originalname, 
+         alt:alt[index],
         },
         file: {name:image.originalname,data:image.buffer,size:image.size,mimetype:image.mimetype}
       });

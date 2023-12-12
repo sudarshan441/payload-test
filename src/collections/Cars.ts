@@ -2,8 +2,9 @@ import { CollectionConfig } from "payload/types";
 import { CustomSelectField } from "../fields/customSelect/field";
 import { CustomTextField } from "../fields/customField/field";
 import { uploadImageHandler } from "../handlers/uploadImageHandler";
-import { CustomInputField } from "../fields/customImage/field";
-import { CustomImageField } from "../fields/ImageComponent/field";
+import { CustomExteriorImages } from "../fields/customImage/ExteriorField";
+import { CustomInteriorImages } from "../fields/customImage/InteriorField";
+// import { CustomImageField } from "../fields/ImageComponent/field";
 
 const Cars: CollectionConfig = {
   slug: "cars",
@@ -20,10 +21,22 @@ const Cars: CollectionConfig = {
       type: "upload",
       relationTo: "images",
     },
-    CustomInputField,
-    CustomImageField,
+    CustomExteriorImages,
+    // CustomImageField,
     {
-      name: "allImages",
+      name: "exteriorImages",
+      type: "array",
+      fields:[
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "images",
+        },
+      ]
+    },
+    CustomInteriorImages,
+    {
+      name: "interiorImages",
       type: "array",
       fields:[
         {

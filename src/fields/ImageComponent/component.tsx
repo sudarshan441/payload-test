@@ -6,6 +6,7 @@ import { UploadField } from 'payload/types';
 import React, { useState } from 'react';
 
 
+
 const CustomImageComponent = ({ path }) => {
   const fieldTypes = {
     // ... other field types
